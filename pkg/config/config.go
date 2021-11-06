@@ -1,10 +1,13 @@
 package config
 
-import (
-	"fmt"
-
-	"github.com/spf13/viper"
-)
+var defaultGooseOptions = GooseOptions{
+	Dir:          ".",
+	Table:        "goose_db_version",
+	CertFile:     "",
+	Verbose:      false,
+	Sequential:   false,
+	AllowMissing: false,
+}
 
 type Config struct {
 	Goose GooseConfig
@@ -19,24 +22,16 @@ type GooseConfig struct {
 type GooseOptions struct {
 	Dir          string
 	Table        string
-	Verbose      bool
 	CertFile     string
+	Verbose      bool
 	Sequential   bool
 	AllowMissing bool
 }
 
-func Init() (*Config, error) {
-	viper.SetConfigName(".goose")
-	viper.AddConfigPath(".")
-
-	if err := viper.ReadInConfig(); err != nil {
-		return nil, fmt.Errorf("error when reading config: %s", err)
+func NewDefault() *Config {
+	return &Config{
+		Goose: GooseConfig{
+			Options: defaultGooseOptions,
+		},
 	}
-
-	cfg := new(Config)
-	if err := viper.Unmarshal(cfg); err != nil {
-		return nil, fmt.Errorf("error when unmarshal config: %s", err)
-	}
-
-	return cfg, nil
 }

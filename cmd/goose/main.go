@@ -13,7 +13,8 @@ func main() {
 	if err != nil {
 		log.Fatalf("%v", err)
 	}
-	println(fmt.Sprintf("%+v", cfg))
+
+	log.Println(fmt.Sprintf("%+v", cfg))
 
 	os.Exit(0)
 }

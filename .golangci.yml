@@ -49,3 +49,5 @@ linters-settings:
       - style
   goimports:
     local-prefixes: github.com/Danil42Russia/goose-config-wrapper
+  govet:
+    enable-all: true

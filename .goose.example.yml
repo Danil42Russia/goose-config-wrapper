@@ -1,6 +1,6 @@
 goose:
-  driver: mysql
-  dbstring: strinf
+  driver: ''
+  dbstring: ''
   options:
     dir: ''
     table: ''
