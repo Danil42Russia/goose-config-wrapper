@@ -1,0 +1,10 @@
+goose:
+  driver: mysql
+  dbstring: strinf
+  options:
+    dir: ''
+    table: ''
+    verbose: ''
+    certfile: ''
+    sequential: ''
+    allow_missing: ''
