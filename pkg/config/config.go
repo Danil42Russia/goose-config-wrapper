@@ -25,7 +25,11 @@ type GooseOptions struct {
 	CertFile     string
 	Verbose      bool
 	Sequential   bool
-	AllowMissing bool
+	AllowMissing bool `mapstructure:"allow-missing"`
+}
+
+func (c *Config) DefaultGooseOptions() GooseOptions {
+	return defaultGooseOptions
 }
 
 func NewDefault() *Config {

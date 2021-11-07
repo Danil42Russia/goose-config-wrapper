@@ -5,6 +5,6 @@ goose:
     dir: ''
     table: ''
     verbose: ''
-    certfile: ''
-    sequential: ''
-    allow_missing: ''
+    certfile: false
+    sequential: false
+    allow-missing: false
